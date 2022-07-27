@@ -1,0 +1,1 @@
+int inicio(int* m);
