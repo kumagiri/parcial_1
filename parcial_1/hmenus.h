@@ -1,1 +1,2 @@
-int inicio(int* m);
+int inicio();
+int mp1();
