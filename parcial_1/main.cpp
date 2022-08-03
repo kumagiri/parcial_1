@@ -1,6 +1,7 @@
 #include <iostream>
 #include "hmenus.h"
-#include "hlista_categorias.h"
+#include "usuarios.h"
+#include "Transaccion.h"
 using namespace std;
 
 int main()
@@ -10,79 +11,190 @@ int main()
     while(bandera1==false){
 
         m=inicio();
-        if(m==1){*/
+        if(m==1){
         bool banderap1=false;
-        int m1=0,b=0,c=1,d=0;
-        char a[23];
-        char** ma1=nullptr;
-        char** ma2=nullptr;
-        int* tamaños=nullptr;
+        int m1=0,c=0,d=0,e=0,h=0,l=0;
+        char ** b=nullptr;
+
+        b= new char*[c];
+        for(int i=0;i<=c;i++){
+            b[i]=new char[23];
+        }
         while(banderap1==false){
              m1=mp1();
              if(m1==1){
-                 iniciar_matriz(a);
-                 cout<<"Por favor ingrese la categoria que decea agregar\n";
-                 cin>>a;
 
+
+                char **Aux= new char*[c];
+                for(int i = 0; i<c; i++){
+                     Aux[i]=b[i];
+                 }
+                delete[] b;
+                c+=1;
+                b=new char*[c];
+                for(int i=0;i<c-1;i++){
+                    b[i]=Aux[i];
+                }
+                delete[] Aux;
+                Aux = nullptr;
+                b[c-1] = new char[23];
+
+                for(int i=0;i<23;i++){
+                    *(*(b+(c-1))+i)=0;
+                }
+                cout<<"ingresa la nueva categoria"<<endl;
+                cin>>b[c-1];
+
+
+
+                 h++;
+
+
+                 int e=0;
                  for(int i=0;i<23;i++){
-                     if(a[i]==0){
+                    if(*(*(b+(c-1))+i)!=0){
+                                e++;
 
-                     }
-                     else{
-                         b++;
-                     }
-                 }
-                 if(c==1){
-                    ma1= new char*[c];
-                    for(int i=0;i<c;i++){
-                        ma1[i]=new char[b];
                     }
-                    ma1[0]=a;
-                    cout<<ma1[0]<<endl;
-                    c++;
-                    d=b;
+
                  }
-                 else{
-                     if(c%2==0){
-                         ma2= new char*[c];
-                         for(int i=0;i<c;i++){
-                             ma2[i]=new char[tamaños[i]];
-                         }
-                        for(int i=0;i<c;i++){
-                            if(i<c-1){
-                                agregar(ma1,ma2,b,i);
-                            }
-                            else if(i==c-1){
-                                ma2[i]=a;
-                            }
+
+                 for(int i=0;i<h-1;i++){
+                    l=0;
+                    for(int j=0;j<e;j++){
+
+                        if(*(*(b+(c-1))+j)==*(*(b+i)+j)){
+                          l++;
+
 
                         }
-                        cout<<ma2[0]<<endl<<ma2[1];
+                    }
+                    if(l==e){
+                      for(int i=0;i<e;i++){
+                          b[c-1][i]=0;
+                      }
+                      delete[] b[c-1];
+                      cout<<"La palabra que ingresaste esta repetida"<<endl;
 
-                     }
-                     else{
+                    }
+                  }
 
-                     }
-                 }
 
-             }
+              }
+
+
              else if(m1==2){
-                 cout<<"visualizar"<<endl;
+                 for (int i=0; i<c; i++){
+                     cout << b[i];
+                     cout << endl;
+                 }
              }
+
              else if(m1==3){
-                 cout<<"eliminar"<<endl;
-             }
-             else if(m1==4){
                  banderap1=true;
             }
          }
-        /*}
+
         else if(m==2){
-            cout<<"menu 2"<<endl;
+            bool banderap2=false;
+            int m2=0,a=0,rep=0;
+
+            int * cedulas=nullptr;
+            char ** nombres=nullptr;
+            char ** apellido=nullptr;
+            char ** nacionalidad=nullptr;
+            char ** telefono=nullptr;
+            int * vive=nullptr;
+
+            cedulas=new int[a];
+            nombres= new char*[a];
+            for(int i=0;i<=a;i++){
+                nombres[i]=new char[15];
+            }
+            apellido= new char*[a];
+            for(int i=0;i<=a;i++){
+                apellido[i]=new char[15];
+            }
+            nacionalidad= new char*[a];
+            for(int i=0;i<=a;i++){
+                nacionalidad[i]=new char[10];
+            }
+            telefono= new char*[a];
+            for(int i=0;i<=a;i++){
+                telefono[i]=new char[11];
+            }
+            vive=new int[a];
+
+            while(banderap2==false){
+            m2=mp2();
+            rep=0;
+
+            if(m2==1){
+                a++;
+                cedula(cedulas,&a,&rep);
+
+
+                if(rep!=1){
+                    tel(telefono,a);
+                    nom(nombres,a);
+                    apell(apellido,a);
+                    nacion(nacionalidad,a);
+                    vida(vive,a);
+
+                }
+            }
+
+            else if(m2==2){
+
+                for(int i=0;i<a;i++){
+                    cout<<i+1<<". cedula:"<<*(cedulas+i)<<"| nombre:"<<*(nombres+i)<<"| apellido:"<<*(apellido+i)<<"| nacionalidad:"<<*(nacionalidad+i)<<"| Actualmente vivo:";
+                    if((*(vive+i))==1){
+                        cout<<"si\n";
+
+                    }
+                    else if((*(vive+i))==2){
+                        cout<<"no\n";
+                    }
+                    cout<<endl<<*(vive+i)<<endl;
+                }
+
+            }
+            else if(m2==3){
+                banderap2=true;
+            }
+            }
         }
-        else if(m==3){
-            cout<<"menu 3"<<endl;
-        }
+        else if(m==3){*/
+           int m3=0,a=1;
+           bool banderap3=false;
+           int ** fecha=nullptr,** hora=nullptr;
+           int* valor=nullptr;
+
+           fecha= new int*[a];
+           for(int i=0;i<a;i++){
+               fecha[i]=new int[3];
+           }
+           while(banderap3==false){
+               m3=mp3();
+               if(m3==1){
+                   a++;
+                   calendario(fecha,a);
+                   int l=0;
+                   for(int i = 0; i<a; i++){
+
+                    cout<< *(*(fecha+i)+l)<<"/";
+                    l++;
+               }
+                   cout<<endl;
+              }
+               else if(m3==2){
+                   cout<<"menu 5"<<endl;
+               }
+               else if(m3==3){
+                   banderap3=true;
+               }
+           }
+        /*}
         else if(m==4){
             cout<<"menu 4"<<endl;
         }
@@ -95,6 +207,25 @@ int main()
         else{
             cout<<"La opcion escogida no esta en las opciones"<<endl;
         }
-    }*/
+    }
+    delete[] cedulas;
+    for(int i=0;i<20;i++){
+        delete[] nombres[i];
+    }
+    delete [] nombres;
+    for(int i=0;i<20;i++){
+        delete[] apellido[i];
+    }
+    delete [] apellido;
+    for(int i=0;i<20;i++){
+        delete[] nacionalidad[i];
+    }
+    delete [] nacionalidad;
+    for(int i=0;i<20;i++){
+        delete[] telefono[i];
+    }
+    delete [] telefono;
+    delete [] vive;*/
+
     return 0;
 }
