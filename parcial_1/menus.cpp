@@ -40,7 +40,7 @@ int mp2(){
 }
 int mp3(){
     int m3=0;
-    cout<<" transacciones que decea realizar: \n"
+    cout<<"Aplicacion: transacciones que decea realizar: \n"
           "1.registrar transaccion\n"
           "2.visualizar transacciones\n"
           "3.salir: ";

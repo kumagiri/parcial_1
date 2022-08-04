@@ -6,25 +6,65 @@ using namespace std;
 
 int main()
 {
-    /*int m=0;
+    int m=0,a=1,c=1,s1=0,s2=0,s3=0;
     bool bandera1=false;
+    //aplicacione 1
+    char ** b=nullptr;
+    b= new char*[c];
+    for(int i=0;i<=c;i++){
+        b[i]=new char[23];
+    }
+    int * cedulas=nullptr;
+    char ** nombres=nullptr;
+    char ** apellido=nullptr;
+    char ** nacionalidad=nullptr;
+    char ** telefono=nullptr;
+    int * vive=nullptr;
+
+    cedulas=new int[a];
+    nombres= new char*[a];
+    for(int i=0;i<=a;i++){
+        nombres[i]=new char[15];
+    }
+    apellido= new char*[a];
+    for(int i=0;i<=a;i++){
+        apellido[i]=new char[15];
+    }
+    nacionalidad= new char*[a];
+    for(int i=0;i<=a;i++){
+        nacionalidad[i]=new char[10];
+    }
+    telefono= new char*[a];
+    for(int i=0;i<=a;i++){
+        telefono[i]=new char[11];
+    }
+    vive=new int[a];
+
+    int ** fecha=nullptr,** hora=nullptr;
+    int* valor=nullptr;
+
+    fecha= new int*[a];
+    fecha[0]=new int[3];
+
+    hora= new int*[a];
+
+    hora[0]=new int[3];
+    valor= new int[a];
     while(bandera1==false){
 
         m=inicio();
         if(m==1){
         bool banderap1=false;
-        int m1=0,c=0,d=0,e=0,h=0,l=0;
-        char ** b=nullptr;
+        int m1=0,h=0,l=0;
+         c=0;
 
-        b= new char*[c];
-        for(int i=0;i<=c;i++){
-            b[i]=new char[23];
-        }
+
         while(banderap1==false){
              m1=mp1();
+
              if(m1==1){
 
-
+                s1++;
                 char **Aux= new char*[c];
                 for(int i = 0; i<c; i++){
                      Aux[i]=b[i];
@@ -93,43 +133,21 @@ int main()
              else if(m1==3){
                  banderap1=true;
             }
-         }
 
+        }
+        }
         else if(m==2){
             bool banderap2=false;
-            int m2=0,a=0,rep=0;
+            int m2=0,rep=0;
 
-            int * cedulas=nullptr;
-            char ** nombres=nullptr;
-            char ** apellido=nullptr;
-            char ** nacionalidad=nullptr;
-            char ** telefono=nullptr;
-            int * vive=nullptr;
 
-            cedulas=new int[a];
-            nombres= new char*[a];
-            for(int i=0;i<=a;i++){
-                nombres[i]=new char[15];
-            }
-            apellido= new char*[a];
-            for(int i=0;i<=a;i++){
-                apellido[i]=new char[15];
-            }
-            nacionalidad= new char*[a];
-            for(int i=0;i<=a;i++){
-                nacionalidad[i]=new char[10];
-            }
-            telefono= new char*[a];
-            for(int i=0;i<=a;i++){
-                telefono[i]=new char[11];
-            }
-            vive=new int[a];
-
+            a=0;
             while(banderap2==false){
             m2=mp2();
             rep=0;
 
             if(m2==1){
+                s2++;
                 a++;
                 cedula(cedulas,&a,&rep);
 
@@ -164,39 +182,44 @@ int main()
             }
             }
         }
-        else if(m==3){*/
+        else if(m==3){
            int m3=0,a=1;
            bool banderap3=false;
-           int ** fecha=nullptr,** hora=nullptr;
-           int* valor=nullptr;
 
-           fecha= new int*[a];
-           for(int i=0;i<a;i++){
-               fecha[i]=new int[3];
-           }
+
+
+
+           a=0;
            while(banderap3==false){
                m3=mp3();
                if(m3==1){
+                   s3++;
                    a++;
                    calendario(fecha,a);
-                   int l=0;
-                   for(int i = 0; i<a; i++){
-
-                    cout<< *(*(fecha+i)+l)<<"/";
-                    l++;
-               }
+                   tiempo(hora,a);
+                   cantidad(valor,a);
                    cout<<endl;
               }
                else if(m3==2){
-                   cout<<"menu 5"<<endl;
+                   cout<<"\ntransacciones realizadas:\n";
+                   for(int i=0;i<a;i++){
+
+                       cout<<i+1<<".";
+                       imprimir_fecha(fecha,i);
+                       imprimir_hora(hora,i);
+                       imprimir_valor(valor,i);
+                       cout<<endl;
+                   }
                }
                else if(m3==3){
-                   banderap3=true;
-               }
+                       banderap3=true;
+
+                   }
+
            }
-        /*}
+        }
         else if(m==4){
-            cout<<"menu 4"<<endl;
+
         }
         else if(m==5){
             cout<<"menu 5"<<endl;
@@ -207,6 +230,11 @@ int main()
         else{
             cout<<"La opcion escogida no esta en las opciones"<<endl;
         }
+    }
+
+    delete[] b;
+    for(int i=0;i<23;i++){
+        delete[] b[i];
     }
     delete[] cedulas;
     for(int i=0;i<20;i++){
@@ -225,7 +253,7 @@ int main()
         delete[] telefono[i];
     }
     delete [] telefono;
-    delete [] vive;*/
+    delete [] vive;
 
     return 0;
 }
