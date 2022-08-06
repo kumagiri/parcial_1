@@ -49,3 +49,13 @@ int mp3(){
 
 }
 
+int mp4(){
+    int m4=0;
+    cout<<"Aplicacion: Busqueda que decea realizar: \n"
+          "1.buscar caracter alfabetico\n"
+          "2.buscar caracter numerico\n"
+          "3.salir: ";
+    cin>>m4;
+    return m4 ;
+
+}

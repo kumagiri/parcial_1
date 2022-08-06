@@ -133,6 +133,9 @@ int main()
              else if(m1==3){
                  banderap1=true;
             }
+             else{
+                 cout<<"La opcion seleccionada no es correcta\n";
+             }
 
         }
         }
@@ -180,7 +183,11 @@ int main()
             else if(m2==3){
                 banderap2=true;
             }
+            else{
+                cout<<"La opcion seleccionada no es correcta\n";
             }
+            }
+
         }
         else if(m==3){
            int m3=0,a=1;
@@ -215,11 +222,50 @@ int main()
                        banderap3=true;
 
                    }
+               else{
+                   cout<<"La opcion seleccionada no es correcta\n";
+               }
 
            }
         }
         else if(m==4){
 
+            int m4=0,b=0,l=0;
+            bool banderap4=false;
+            char a[23];
+
+            for(int i=0;i<23;i++){
+                a[i]=0;
+            }
+
+            while(banderap4==false){
+
+                m4=mp4();
+                if(m4==1){
+                    cout<<"por favor ingrese la palabra o frase a buscar";
+                    cin>>a;
+                   for(int i=0;i<23;i++){
+                    if(a[i]!=0){
+                     l++;
+                    }
+                   }
+
+
+
+                }
+                else if(m4==2){
+                    cout<<"por favor ingrese la palabra o frase a buscar";
+                    cin>>b;
+
+                }
+                else if(m4==3){
+
+                    banderap4=true;
+                }
+                else{
+                    cout<<"La opcion seleccionada no es correcta\n";
+                }
+            }
         }
         else if(m==5){
             cout<<"menu 5"<<endl;
